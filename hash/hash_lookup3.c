@@ -21,7 +21,8 @@
  * @return 32-bit hash result
  */
 
-uint32_t lookup3_32(const char *key, uint32_t seed) {
+uint32_t lookup3_32(const char *key, uint32_t seed) 
+{
     uint32_t a, b, c;
     a = b = 0x9e3779b9;
     c = seed;
@@ -30,7 +31,8 @@ uint32_t lookup3_32(const char *key, uint32_t seed) {
 
     size_t length = strlen(key);
 
-    while (length - i >= 12) {
+    while (length - i >= 12) 
+    {
         a += (uint32_t)key[i] | ((uint32_t)key[i+1] << 8) |
              ((uint32_t)key[i+2] << 16) | ((uint32_t)key[i+3] << 24);
         b += (uint32_t)key[i+4] | ((uint32_t)key[i+5] << 8) |
@@ -49,7 +51,8 @@ uint32_t lookup3_32(const char *key, uint32_t seed) {
     }
 
     uint32_t remainingA = 0, remainingB = 0, remainingC = 0;
-    switch (length - i) {
+    switch (length - i) 
+    {
         case 11: remainingC += ((uint32_t)key[i+10]) << 16;
         case 10: remainingC += ((uint32_t)key[i+9]) << 8;
         case 9:  remainingC += (uint32_t)key[i+8];
