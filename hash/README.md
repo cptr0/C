@@ -6,3 +6,4 @@
 * adler_32 (32 bit)
 * crc32 (32 bit)
 * BLAKE2b
+* Lookup3 (32 bit)
